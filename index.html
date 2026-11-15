@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Academia de Artes Ágora · San Gil</title>
+<meta name="description" content="Academia de artes en San Gil, Santander. Música y pintura con clases personalizadas, e inglés como valor agregado. Agenda una clase de prueba gratis.">
+<meta name="theme-color" content="#16365C">
+<link rel="canonical" href="https://artesagora.com/">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Academia de Artes Ágora · Artes para crecer">
+<meta property="og:description" content="Música y pintura en San Gil, con clases personalizadas e inglés como valor agregado.">
+<meta property="og:url" content="https://artesagora.com/">
+<meta property="og:image" content="https://artesagora.com/img/og.jpg">
+<style>
+@font-face{font-family:"Fraunces";src:url("fonts/Fraunces-SemiBold.ttf") format("truetype");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("fonts/Fraunces-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("fonts/Fraunces-ExtraBold.ttf") format("truetype");font-weight:800 900;font-display:swap}
+@font-face{font-family:"Figtree";src:url("fonts/Figtree-Regular.ttf") format("truetype");font-weight:400 500;font-display:swap}
+@font-face{font-family:"Figtree";src:url("fonts/Figtree-SemiBold.ttf") format("truetype");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Figtree";src:url("fonts/Figtree-ExtraBold.ttf") format("truetype");font-weight:800;font-display:swap}
+
+
+:root{--logo-ink:#16365C;color-scheme:light;
+  --fonce:#16365C; --guayacan:#F2B705; --coral:#CC452E; --gallineral:#527D31; --lila:#7A5BA6; --ocre:#946B00;
+  --bg:#F6F7F4; --surface:#FFFFFF; --fg:#17212B; --muted:#4E5B65; --line:#DCE3E3; --accent-text:#16365C;
+  --band:#16365C; --band-fg:#FFFFFF; --band-muted:#C8D3E3; --staff:#16365C;
+  --ff-display:'Fraunces',Georgia,"Times New Roman",serif;
+  --ff-body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#111A20; --surface:#18232B; --fg:#EEF1EE; --muted:#A9B5BC; --line:#2A3842; --accent-text:#F2B705; --band:#12304F; --band-fg:#FFFFFF; --band-muted:#B6C5DA; --logo-ink:#EEF1EE; --staff:#C8D3E3; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#111A20; --surface:#18232B; --fg:#EEF1EE; --muted:#A9B5BC; --line:#2A3842; --accent-text:#F2B705; --band:#12304F; --band-fg:#FFFFFF; --band-muted:#B6C5DA; --logo-ink:#EEF1EE; --staff:#C8D3E3; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-body);font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:var(--ff-display);line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.container{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,5vw,40px)}
+section{padding-block:clamp(56px,9vw,96px)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.band .eyebrow{color:var(--guayacan)}
+h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;letter-spacing:-.015em}
+.lead{font-size:1.12rem;color:var(--muted);max-width:60ch}
+.band{background:var(--band);color:var(--band-fg)}
+.band .lead{color:var(--band-muted)}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+
+/* Idioma */
+[data-lang="es"] .en{display:none}
+[data-lang="en"] .es{display:none}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--ff-display);font-weight:800;font-size:1.35rem;letter-spacing:-.01em}
+.logo-mark{width:34px;height:34px;border-radius:50%;background:var(--fonce);position:relative;flex-shrink:0}
+.logo-mark::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--guayacan);right:-3px;top:-3px}
+.logo .brand{height:34px;width:auto;display:block;color:var(--logo-ink)}
+.foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.foot-brand .brand-full{height:64px;width:auto;color:var(--logo-ink)}
+.links{display:flex;gap:22px;font-weight:600;font-size:.95rem}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--fg)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.lang button{font:700 .78rem var(--ff-body);border:0;background:transparent;color:var(--muted);padding:6px 10px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fonce);color:#fff}
+@media (max-width:860px){ .links{display:none} }
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:1rem;text-decoration:none;border-radius:999px;padding:13px 22px;border:2px solid transparent;cursor:pointer;font-family:var(--ff-body)}
+.btn-primary{background:var(--coral);color:#fff}
+.btn-primary:hover{background:#B33B26}
+.btn-ghost{border-color:currentColor;color:var(--fg);background:transparent}
+.band .btn-ghost{color:var(--band-fg)}
+.offer .btn-ghost{color:var(--fg)}
+.btn-light{background:#fff;color:#16365C}
+.btn-light:hover{background:#F2B705;color:#17212B}
+.btn:focus-visible,.lang button:focus-visible,.theme:focus-visible,a:focus-visible{outline:3px solid var(--guayacan);outline-offset:3px}
+
+/* Hero */
+.hero{padding-block:clamp(48px,8vw,88px) clamp(56px,9vw,104px);overflow:hidden}
+.hero .container{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.7rem,7.2vw,5.2rem);font-weight:800;letter-spacing:-.025em}
+.hero h1 .hl{color:var(--accent-text)}
+.hero-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero .sub{font-size:1.2rem;color:var(--muted);max-width:46ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.92rem;color:var(--muted);font-weight:600}
+.facts > span{display:inline-flex;align-items:center;gap:8px}
+.facts i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.art{position:relative;aspect-ratio:1/1;max-width:100%;width:100%}
+.art svg{width:100%;height:100%;display:block}
+@media (max-width:860px){ .hero .container{grid-template-columns:1fr} .art{max-width:420px;justify-self:center} }
+
+/* Idea */
+.idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.idea{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:3px solid var(--guayacan)}
+.idea h3{font-size:1.3rem}
+.idea p{color:var(--muted)}
+@media (max-width:860px){ .idea-grid{grid-template-columns:1fr} }
+
+/* Programas */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:960px){ .prog-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:620px){ .prog-grid{grid-template-columns:1fr} }
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.prog .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.area{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:#fff}
+.age{font-size:.85rem;font-weight:700;color:var(--muted)}
+.prog h3{font-size:1.35rem}
+.prog p{color:var(--muted);font-size:.97rem}
+.prog .hook{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:.9rem;color:var(--fg)}
+.prog .hook b{font-family:var(--ff-display)}
+.soon{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:.95rem}
+.soon .tag{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:600;color:var(--fg)}
+
+/* Inglés */
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){ .levels{grid-template-columns:1fr} }
+.level{border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;color:#fff}
+.level .step{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.level h3{font-size:1.6rem}
+.rules{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px 32px;padding:0;list-style:none}
+@media (max-width:860px){ .rules{grid-template-columns:1fr} }
+.rules li{display:flex;gap:14px;align-items:flex-start}
+.rules li b{font-family:var(--ff-display);display:block;font-size:1.08rem}
+.rules li .k{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--guayacan);color:#17212B;font-weight:800;display:grid;place-items:center;font-size:.85rem}
+.rules li p{color:var(--muted);font-size:.95rem}
+
+/* Pasaporte */
+.pass-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+@media (max-width:860px){ .pass-wrap{grid-template-columns:1fr} }
+.passport{background:#F6F7F4;color:#17212B;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 40px -20px rgba(0,0,0,.45);transform:rotate(-1.5deg)}
+.passport .ph{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4E5B65;display:flex;justify-content:space-between}
+.stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;justify-items:center}
+.stamp{width:min(96px,100%);aspect-ratio:1/1;border-radius:50%;border:3px solid currentColor;display:grid;place-items:center;text-align:center;font-family:var(--ff-display);font-weight:800;font-size:.78rem;line-height:1.05;padding:10px}
+.stamp:nth-child(odd){transform:rotate(-9deg)} .stamp:nth-child(even){transform:rotate(7deg)}
+.stamp.empty{border-style:dashed;color:#B9C4C6}
+.pass-list{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.pass-list > div{display:flex;gap:12px}
+.pass-list b{font-family:var(--ff-display)}
+.pass-list p{color:var(--band-muted)}
+.pass-list i{width:12px;height:12px;border-radius:50%;background:var(--guayacan);margin-top:7px;flex-shrink:0}
+
+/* Colegios */
+.school{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:start}
+@media (max-width:860px){ .school{grid-template-columns:1fr} }
+.offer{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.offer ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+
+/* Director */
+.director{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,48px);align-items:center}
+@media (max-width:700px){ .director{grid-template-columns:1fr} }
+.portrait{width:clamp(180px,26vw,280px);height:auto;aspect-ratio:1/1;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 6px var(--guayacan)}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.roles > span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.88rem;font-weight:600}
+
+/* Inscripciones */
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){ .info{grid-template-columns:1fr} }
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:1.15rem;color:var(--guayacan)}
+.card p{color:var(--band-muted)}
+.card strong{color:#fff}
+.benefits{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.22)}
+@media (max-width:860px){ .benefits{grid-template-columns:1fr} }
+.benefit{padding:22px 22px 0 0;display:flex;flex-direction:column;gap:6px}
+.benefit h3{font-size:1.1rem}
+.benefit p{color:var(--band-muted);font-size:.95rem}
+.contact-cta{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.note{font-size:.88rem;color:var(--band-muted)}
+
+footer{padding-block:32px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+
+.tools{display:flex;align-items:center;gap:8px}
+.theme{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.theme:hover{color:var(--fg)}
+.theme .i-sun{display:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .theme .i-sun{display:block} :root:not([data-theme="light"]) .theme .i-moon{display:none} }
+:root[data-theme="dark"] .theme .i-sun{display:block} :root[data-theme="dark"] .theme .i-moon{display:none}
+/* Por qué las artes */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+@media (max-width:860px){ .why-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .why-grid{grid-template-columns:1fr} }
+.why{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid rgba(255,255,255,.22)}
+.why .n{font-family:var(--ff-display);font-weight:800;font-size:1.6rem;color:var(--guayacan);line-height:1}
+.why h3{font-size:1.25rem}
+.why p{color:var(--band-muted)}
+/* Fotos de programas */
+.photos{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-bottom:22px}
+@media (max-width:620px){ .photos{grid-template-columns:1fr} }
+.photos figure{margin:0;position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/2;background:var(--line)}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.photos figcaption{position:absolute;left:14px;bottom:14px;background:var(--fonce);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.photos figure:nth-child(2) figcaption{background:var(--coral)}
+.camp{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--ocre);border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:6px}
+.camp h3{font-size:1.15rem}
+.camp p{color:var(--muted);font-size:.97rem}
+/* Contacto */
+.contact{margin-top:40px;display:flex;flex-direction:column;gap:16px}
+.contact-cta{margin-top:0}
+.channels{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;color:var(--band-muted)}
+.channels a{color:#fff;font-weight:700}
+.foot-links{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.foot-links a{color:var(--fg)}
+@media (max-width:620px){ .foot-links{align-items:flex-start} }
+
+/* Encuesta de enganche */
+.quiz{margin-top:44px;background:var(--surface);color:var(--fg);border-radius:22px;padding:clamp(20px,4vw,36px);display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 50px -30px rgba(0,0,0,.6)}
+.quiz-head{display:flex;flex-direction:column;gap:8px}
+.quiz-head .eyebrow{color:var(--coral)}
+.quiz h3{font-size:clamp(1.4rem,3vw,1.9rem)}
+.quiz-head p{color:var(--muted)}
+.qs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){ .qs{grid-template-columns:1fr} }
+.q{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.q p{font-weight:600;font-size:.98rem}
+.yn{display:flex;gap:6px;flex-shrink:0}
+@media (max-width:480px){ .q{flex-direction:column;align-items:stretch} .yn button{flex:1} }
+.yn button{font:700 .88rem var(--ff-body);border:2px solid var(--line);background:transparent;color:var(--fg);border-radius:999px;padding:7px 14px;cursor:pointer;min-width:52px}
+.yn button[aria-pressed="true"][data-v="1"]{background:var(--gallineral);border-color:var(--gallineral);color:#fff}
+.yn button[aria-pressed="true"][data-v="0"]{background:var(--muted);border-color:var(--muted);color:#fff}
+.yn button:focus-visible{outline:3px solid var(--guayacan);outline-offset:2px}
+.result{border-top:2px dashed var(--line);padding-top:20px;display:flex;flex-direction:column;gap:12px}
+.result h4{font-family:var(--ff-display);font-size:1.45rem;color:var(--accent-text)}
+.result p{color:var(--muted)}
+.result ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.result li{background:color-mix(in srgb,var(--guayacan) 22%,transparent);border:1px solid var(--guayacan);border-radius:999px;padding:6px 12px;font-weight:700;font-size:.9rem}
+.result .btn-ghost{color:var(--fg)}
+
+[hidden]{display:none!important}
+.band .rules li p{color:var(--band-muted)}
+.pass-list p{color:var(--muted)}
+.pass-list b{color:var(--fg)}
+.photos figure{aspect-ratio:auto;height:clamp(220px,30vw,360px)}
+</style>
+</head>
+<body>
+<div id="site" data-lang="es">
+
+<nav class="nav" aria-label="Principal">
+  <div class="container">
+    <a class="logo" href="#inicio" aria-label="Ágora, inicio"><svg xmlns="http://www.w3.org/2000/svg" class="brand" role="img" aria-label="Ágora, Academia de Artes" viewBox="50 50 1452 556"> <g id="tinta" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="currentColor"><path d="M7005 24739 c-44 -4 -141 -12 -215 -18 -1038 -81 -2122 -461 -2755 -966 -361 -288 -567 -528 -728 -851 -461 -921 21 -1835 968 -1838 279 -1 421 37 613 163 799 527 577 1800 -350 2006 -132 29 -136 56 -25 162 414 393 1159 721 1867 821 2052 291 3654 -675 3911 -2358 38 -255 61 -2686 26 -2790 -18 -52 -48 -51 -165 6 -408 197 -921 360 -1432 453 -1183 215 -2397 212 -3313 -8 -2096 -504 -3237 -1841 -2937 -3441 220 -1171 1273 -2131 2675 -2439 105 -23 219 -49 254 -57 35 -8 113 -19 175 -25 61 -6 140 -15 176 -21 142 -23 779 -22 981 1 613 72 1168 209 1614 398 756 322 1271 656 1747 1135 171 172 203 194 224 151 5 -10 10 -333 11 -718 3 -771 1 -738 43 -760 59 -30 1814 -22 1845 10 30 29 27 -453 29 3775 3 3416 1 3551 -33 3831 -252 2018 -2215 3400 -4811 3388 -173 -1 -351 -5 -395 -10z m1155 -5562 c909 -101 1622 -304 2030 -578 152 -103 135 71 135 -1384 0 -1454 19 -1264 -151 -1465 -1430 -1688 -4195 -1967 -5264 -532 -324 435 -458 858 -467 1472 -19 1315 760 2171 2214 2431 65 11 121 23 124 24 6 4 382 42 479 48 155 11 753 0 900 -16z M18765 24745 c-11 -2 -101 -9 -200 -15 -1161 -73 -2245 -583 -3115 -1466 -1268 -1287 -1828 -3120 -1549 -5069 252 -1760 1247 -3261 2702 -4074 440 -246 1047 -462 1477 -526 58 -9 182 -28 275 -43 409 -64 1160 -28 1655 79 887 191 1789 685 2367 1296 280 297 257 277 288 247 32 -33 16 -2989 -18 -3184 -206 -1187 -1013 -2096 -2233 -2513 -669 -229 -1597 -300 -2274 -173 -41 8 -131 24 -200 36 -364 64 -858 238 -1159 409 -333 188 -503 312 -692 503 -149 151 -152 183 -18 198 754 87 1170 797 888 1515 -278 709 -1260 867 -1827 293 -500 -506 -333 -1487 373 -2193 676 -676 1921 -1176 3150 -1265 77 -6 192 -15 255 -20 147 -12 747 -13 865 0 50 5 164 14 255 19 210 13 367 37 790 122 2161 433 3680 1982 3780 3854 15 281 12 11775 -3 11804 -26 52 -9 55 -946 -179 -486 -121 -896 -227 -912 -235 -55 -29 -54 -14 -59 -650 -3 -324 -9 -596 -13 -602 -15 -24 -46 -13 -79 30 -181 229 -257 314 -420 478 -646 647 -1474 1087 -2333 1239 -66 12 -154 28 -195 36 -151 30 -787 65 -875 49z m1055 -655 c1187 -159 2223 -913 2817 -2048 69 -132 68 -5824 -1 -5956 -480 -918 -1432 -1652 -2411 -1860 -1771 -375 -3275 527 -3969 2378 -410 1092 -529 2591 -310 3901 401 2408 1953 3844 3874 3585z M46645 24744 c-16 -2 -88 -8 -160 -14 -1085 -91 -2090 -792 -2720 -1896 -173 -303 -159 -370 -165 792 -5 956 -5 956 -29 975 -33 27 32 40 -920 -196 -883 -220 -932 -234 -957 -269 -30 -43 -20 -10351 11 -10381 38 -39 1817 -39 1862 -1 28 24 28 24 33 3953 5 3928 5 3928 51 4058 468 1318 1368 2186 2539 2449 504 113 1104 45 1525 -173 292 -151 318 -194 145 -242 -1046 -288 -1081 -1768 -50 -2097 771 -246 1516 310 1465 1093 -65 989 -725 1671 -1835 1895 -195 40 -666 72 -795 54z M54475 24745 c-5 -2 -82 -8 -170 -15 -2306 -169 -3974 -1405 -3750 -2779 123 -754 1087 -1152 1739 -718 793 529 565 1797 -361 2003 -134 30 -135 64 -2 180 797 699 2168 1017 3359 778 1337 -268 2199 -1100 2398 -2314 29 -180 49 -2779 22 -2830 -18 -33 -59 -24 -201 44 -388 186 -894 344 -1389 435 -986 179 -1926 208 -2810 85 -290 -41 -438 -72 -735 -156 -551 -156 -936 -318 -1310 -550 -1097 -683 -1607 -1707 -1400 -2811 254 -1349 1533 -2362 3225 -2553 1545 -175 3331 446 4405 1531 171 173 185 183 209 157 13 -16 15 -103 18 -727 3 -762 2 -746 54 -765 67 -26 1813 -12 1839 15 31 30 40 7180 10 7470 -20 199 -31 277 -54 386 -210 1012 -816 1822 -1806 2409 -391 233 -964 458 -1395 550 -80 17 -164 35 -186 40 -408 95 -869 141 -1389 139 -170 0 -314 -2 -320 -4z m1085 -5568 c915 -102 1612 -300 2027 -578 149 -101 133 70 133 -1384 0 -1419 9 -1271 -81 -1386 -1372 -1741 -4224 -2072 -5325 -618 -586 774 -647 1956 -144 2786 430 708 1248 1100 2500 1197 135 10 746 -2 890 -17z"/></g> <g id="coral" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="#CC452E"><path d="M33150 24473 c-36 -2 -141 -9 -235 -18 -93 -8 -213 -17 -265 -20 -130 -9 -387 -50 -490 -80 -149 -42 -320 -85 -415 -105 -140 -29 -484 -150 -640 -225 -564 -272 -557 -269 -786 -421 -123 -83 -267 -177 -319 -209 -230 -144 -472 -335 -564 -444 -21 -25 -104 -111 -185 -191 -80 -80 -189 -197 -242 -260 -53 -63 -114 -131 -134 -150 -21 -19 -68 -75 -106 -125 -37 -49 -95 -124 -129 -165 -87 -107 -245 -348 -306 -465 -28 -55 -96 -185 -151 -290 -54 -104 -114 -226 -132 -270 -18 -44 -70 -152 -116 -240 -92 -177 -209 -503 -240 -670 -10 -49 -26 -117 -36 -151 -41 -134 -115 -562 -143 -829 -50 -485 -49 -1186 3 -1501 11 -65 30 -182 41 -259 56 -357 172 -753 346 -1175 41 -102 89 -221 105 -265 17 -44 56 -134 88 -200 32 -66 80 -164 106 -218 26 -54 82 -146 124 -205 43 -59 95 -138 116 -175 20 -37 55 -91 77 -120 22 -29 104 -137 182 -242 240 -320 459 -561 632 -691 40 -29 125 -101 190 -159 66 -58 164 -134 220 -169 55 -35 164 -110 240 -168 278 -207 575 -381 784 -458 43 -16 115 -47 160 -70 236 -119 511 -218 865 -312 281 -74 338 -87 445 -102 177 -25 223 -33 389 -61 281 -47 639 -77 856 -70 449 13 582 24 940 80 364 56 629 119 1027 244 51 16 120 37 153 46 122 34 421 175 562 264 224 142 171 153 -153 30 -55 -20 -152 -47 -215 -59 -136 -25 -349 -73 -474 -106 -161 -42 -493 -97 -755 -124 -193 -21 -1076 15 -1264 51 -28 5 -103 19 -166 30 -63 11 -151 29 -195 40 -44 12 -131 29 -192 40 -62 10 -141 30 -175 45 -35 14 -121 41 -193 59 -300 78 -464 135 -735 255 -52 23 -147 62 -210 87 -147 57 -399 187 -515 266 -49 33 -165 109 -258 168 -369 238 -688 512 -1021 879 -72 80 -160 176 -196 213 -35 37 -90 105 -122 150 -146 206 -194 279 -246 367 -30 52 -83 142 -117 200 -34 58 -72 130 -85 160 -12 30 -51 111 -85 180 -34 69 -84 181 -110 250 -27 69 -77 196 -111 282 -120 297 -201 657 -229 1013 -8 105 -22 253 -31 330 -54 466 15 930 130 877 60 -27 72 -92 96 -527 15 -276 41 -447 100 -660 28 -99 66 -250 85 -335 78 -343 198 -661 343 -903 30 -51 70 -125 88 -165 19 -40 49 -96 67 -125 18 -29 62 -101 96 -162 241 -421 530 -769 861 -1038 80 -65 168 -137 196 -160 150 -123 283 -225 402 -306 73 -49 145 -100 159 -111 92 -72 659 -369 876 -458 473 -195 731 -265 1382 -373 66 -11 188 -33 270 -49 83 -16 191 -35 240 -41 128 -18 856 -18 1000 -1 169 20 484 71 540 88 27 8 102 26 165 40 63 14 162 43 220 65 58 21 147 48 198 59 120 26 283 81 592 197 211 80 548 266 800 442 63 44 173 119 244 168 241 163 582 461 754 658 282 324 358 418 420 525 27 47 86 144 132 215 302 474 575 1198 654 1735 8 52 27 169 42 260 31 189 41 536 16 562 -26 26 -71 -74 -113 -251 -11 -46 -36 -133 -55 -193 -19 -60 -34 -113 -34 -118 0 -14 -167 -375 -231 -500 -69 -135 -143 -251 -424 -670 -176 -261 -437 -553 -640 -713 -77 -61 -167 -135 -200 -164 -276 -242 -1045 -658 -1161 -629 -68 17 -30 59 197 216 51 36 131 99 176 142 46 42 120 101 164 131 215 148 515 424 674 623 44 54 116 137 161 184 127 134 195 218 258 320 33 52 83 129 112 170 176 254 450 875 545 1234 22 83 46 174 53 202 92 336 77 1436 -24 1779 -64 218 -86 301 -115 425 -49 211 -193 546 -334 780 -49 80 -99 165 -111 190 -13 25 -61 99 -108 165 -247 349 -236 335 -489 625 -209 241 -253 208 -93 -70 116 -203 159 -285 206 -399 28 -69 63 -152 78 -183 48 -108 91 -283 197 -813 95 -476 131 -1193 75 -1540 -8 -49 -17 -119 -21 -155 -36 -359 -153 -819 -275 -1086 -17 -38 -62 -141 -100 -229 -216 -506 -438 -891 -675 -1170 -28 -33 -82 -98 -120 -145 -185 -227 -469 -515 -648 -655 -275 -216 -251 -199 -512 -352 -305 -178 -551 -293 -852 -397 -37 -13 -100 -35 -139 -50 -92 -33 -507 -116 -584 -116 -32 0 -111 -7 -174 -15 -262 -34 -736 -20 -951 30 -33 7 -109 21 -170 30 -495 73 -871 219 -1418 551 -426 259 -913 727 -1145 1102 -282 455 -358 614 -483 1007 -124 392 -201 1009 -169 1355 45 499 41 472 115 730 29 102 67 237 83 300 29 111 122 379 176 508 23 55 96 177 259 437 122 194 180 275 252 355 43 47 108 126 145 175 93 124 374 406 495 497 55 41 135 105 178 141 94 81 362 240 623 370 160 80 433 186 639 248 338 102 366 108 715 159 288 41 1011 -3 1223 -76 175 -59 415 -79 577 -46 334 68 406 73 675 42 214 -25 245 -31 354 -77 176 -73 243 -24 154 113 -172 266 -259 367 -437 511 -72 59 -165 139 -207 179 -42 39 -109 94 -150 122 -41 28 -109 78 -151 110 -197 152 -541 307 -863 388 -55 14 -143 38 -195 54 -124 38 -337 84 -475 104 -60 9 -153 23 -205 31 -88 14 -425 18 -640 8z"/></g> <g id="sol" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="#F2B705"><path d="M7810 30079 c-92 -10 -432 -94 -479 -119 -222 -113 -494 -341 -597 -501 -283 -440 -337 -777 -209 -1303 88 -358 308 -652 651 -869 226 -142 820 -228 1079 -156 427 119 628 229 779 429 28 36 78 95 112 132 160 172 303 581 304 871 2 891 -779 1614 -1640 1516z"/></g> </svg></a>
+    <div class="links">
+      <a href="#por-que"><span class="es">Por qué las artes</span><span class="en">Why the arts</span></a>
+      <a href="#programas"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="#ingles"><span class="es">Inglés</span><span class="en">English</span></a>
+      <a href="#colegios"><span class="es">Colegios</span><span class="en">Schools</span></a>
+      <a href="#contacto"><span class="es">Inscripciones</span><span class="en">Enrollment</span></a>
+    </div>
+    <div class="tools">
+      <button type="button" class="theme" id="theme-btn" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 14.5A9 9 0 0 1 9.5 3a7.5 7.5 0 1 0 11.5 11.5Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+      </button>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" id="lang-es" aria-pressed="true">ES</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="es">Academia de artes · San Gil</span><span class="en">Arts academy · San Gil</span></span>
+      <h1><span class="es"><span>Artes</span> <span class="hl">para crecer.</span></span><span class="en"><span>Arts</span> <span class="hl">to grow.</span></span></h1>
+      <p class="sub"><span class="es">Aprender música entrena la atención, la memoria y la constancia, y le da a niños y jóvenes algo que se queda para siempre: la confianza de crear y de presentarse ante otros.</span><span class="en">Learning music trains attention, memory and perseverance, and gives children and teens something that stays for life: the confidence to create and to perform in front of others.</span></p>
+      <div class="ctas">
+        <a class="btn btn-primary js-contact" href="#contacto"><span class="es">Agenda una clase de prueba gratis</span><span class="en">Book a free trial class</span></a>
+        <a class="btn btn-ghost" href="#por-que"><span class="es">Por qué las artes</span><span class="en">Why the arts</span></a>
+      </div>
+      <div class="facts">
+        <span><i style="background:var(--fonce)"></i><span class="es">Clases personalizadas</span><span class="en">Personalized classes</span></span>
+        <span><i style="background:var(--coral)"></i><span class="es">La música como eje</span><span class="en">Music at the core</span></span>
+        <span><i style="background:var(--guayacan)"></i><span class="es">Inglés como valor agregado</span><span class="en">English as an added value</span></span>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle cx="250" cy="150" r="120" fill="#F2B705"/>
+        <g stroke="var(--staff)" stroke-width="4" stroke-linecap="round">
+          <line x1="20" y1="230" x2="380" y2="200"/><line x1="20" y1="252" x2="380" y2="222"/><line x1="20" y1="274" x2="380" y2="244"/><line x1="20" y1="296" x2="380" y2="266"/><line x1="20" y1="318" x2="380" y2="288"/>
+        </g>
+        <g fill="var(--staff)">
+          <ellipse cx="90" cy="292" rx="16" ry="11" transform="rotate(-20 90 292)"/><rect x="102" y="214" width="5" height="76" rx="2"/>
+          <ellipse cx="170" cy="263" rx="16" ry="11" transform="rotate(-20 170 263)"/><rect x="182" y="185" width="5" height="76" rx="2"/>
+          <path d="M107 214 L187 185 L187 200 L107 229 Z"/>
+        </g>
+        <path d="M232 330 C 262 290, 312 300, 342 262 C 352 250, 368 252, 362 270 C 346 312, 286 330, 246 352 C 232 360, 222 342, 232 330 Z" fill="#CC452E"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="por-que">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow"><span class="es">Por qué estudiar artes</span><span class="en">Why study the arts</span></span>
+      <h2><span class="es">Lo que la música le deja a una persona</span><span class="en">What music leaves in a person</span></h2>
+      <p class="lead"><span class="es">Estudiar música y arte no es solo un pasatiempo. La investigación en educación y neurociencia relaciona la formación artística con habilidades que sirven en el colegio, en la casa y para toda la vida.</span><span class="en">Studying music and art is more than a hobby. Research in education and neuroscience links arts training with skills that help at school, at home and for life.</span></p>
+    </div>
+    <div class="why-grid">
+      <div class="why"><span class="n">01</span><h3><span class="es">Atención y memoria</span><span class="en">Attention and memory</span></h3><p><span class="es">Leer, escuchar y tocar al mismo tiempo ejercita la concentración y la memoria.</span><span class="en">Reading, listening and playing at once exercises focus and memory.</span></p></div>
+      <div class="why"><span class="n">02</span><h3><span class="es">Lenguaje y lectura</span><span class="en">Language and reading</span></h3><p><span class="es">Entrenar el oído ayuda a distinguir los sonidos del idioma, una base para leer y aprender otras lenguas.</span><span class="en">Ear training helps tell apart the sounds of language, a foundation for reading and learning other languages.</span></p></div>
+      <div class="why"><span class="n">03</span><h3><span class="es">Disciplina y constancia</span><span class="en">Discipline and perseverance</span></h3><p><span class="es">Practicar un poco cada día enseña que el progreso llega con esfuerzo.</span><span class="en">A little practice every day teaches that progress comes with effort.</span></p></div>
+      <div class="why"><span class="n">04</span><h3><span class="es">Confianza</span><span class="en">Confidence</span></h3><p><span class="es">Presentarse ante otros fortalece la seguridad y el manejo de los nervios.</span><span class="en">Performing for others builds self-assurance and helps manage nerves.</span></p></div>
+      <div class="why"><span class="n">05</span><h3><span class="es">Trabajo con otros</span><span class="en">Working with others</span></h3><p><span class="es">Hacer música en conjunto exige escuchar, esperar el turno y coordinarse.</span><span class="en">Making music together means listening, taking turns and coordinating.</span></p></div>
+      <div class="why"><span class="n">06</span><h3><span class="es">Emociones y creatividad</span><span class="en">Emotions and creativity</span></h3><p><span class="es">La música y la pintura son una forma sana de expresar lo que se siente.</span><span class="en">Music and painting are a healthy way to express feelings.</span></p></div>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz-head">
+        <span class="eyebrow"><span class="es">Para mamás y papás · 1 minuto</span><span class="en">For parents · 1 minute</span></span>
+        <h3><span class="es">¿Qué le pueden aportar las artes a tu hijo?</span><span class="en">What can the arts bring to your child?</span></h3>
+        <p><span class="es">Responde estas 6 preguntas y descúbrelo.</span><span class="en">Answer these 6 questions and find out.</span></p>
+      </div>
+      <ol class="qs"><li class="q" data-i="0" data-b-es="Un tiempo de calidad lejos de las pantallas" data-b-en="Quality time away from screens"><p><span class="es">¿Pasa más de dos horas al día frente a pantallas?</span><span class="en">Does your child spend more than two hours a day on screens?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li><li class="q" data-i="1" data-b-es="Más atención y memoria" data-b-en="Better attention and memory"><p><span class="es">¿Le cuesta concentrarse en una sola actividad por mucho tiempo?</span><span class="en">Is it hard for them to focus on one activity for long?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li><li class="q" data-i="2" data-b-es="Un talento que vale la pena cultivar" data-b-en="A talent worth growing"><p><span class="es">¿Canta, baila, dibuja o lleva el ritmo cuando nadie lo ve?</span><span class="en">Do they sing, dance, draw or tap rhythms when no one is watching?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li><li class="q" data-i="3" data-b-es="Más confianza para presentarse" data-b-en="More confidence on stage and in class"><p><span class="es">¿Le da pena hablar o presentarse frente a otros?</span><span class="en">Do they feel shy speaking or performing in front of others?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li><li class="q" data-i="4" data-b-es="Un espacio para expresar emociones" data-b-en="A space to express emotions"><p><span class="es">¿Necesita una forma sana de expresar lo que siente?</span><span class="en">Do they need a healthy way to express their feelings?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li><li class="q" data-i="5" data-b-es="Practicar el inglés del colegio cantando y creando" data-b-en="Practicing school English by singing and creating"><p><span class="es">¿Está aprendiendo inglés en el colegio?</span><span class="en">Are they learning English at school?</span></p><div class="yn" role="group"><button type="button" data-v="1" aria-pressed="false"><span class="es">Sí</span><span class="en">Yes</span></button><button type="button" data-v="0" aria-pressed="false">No</button></div></li></ol>
+      <div class="result" id="quiz-result" hidden aria-live="polite">
+        <h4 id="quiz-title"></h4>
+        <p id="quiz-text"></p>
+        <ul id="quiz-benefits"></ul>
+        <div class="ctas"><a class="btn btn-primary js-contact" href="#contacto"><span class="es">Agenda una clase de prueba gratis</span><span class="en">Book a free trial class</span></a><button type="button" class="btn btn-ghost" id="quiz-reset"><span class="es">Volver a empezar</span><span class="en">Start over</span></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="idea">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow"><span class="es">Por qué Ágora</span><span class="en">Why Ágora</span></span>
+      <h2><span class="es">Arte bien enseñado, con algo más</span><span class="en">Art taught well, with something extra</span></h2>
+      <p class="lead"><span class="es">Somos una academia de artes. Lo primero es que cada estudiante aprenda a tocar, cantar y crear con buena técnica. El inglés es un complemento que suma valor a cada clase.</span><span class="en">We are an arts academy. First, every student learns to play, sing and create with good technique. English is a complement that adds value to every class.</span></p>
+    </div>
+    <div class="idea-grid">
+      <div class="idea"><h3><span class="es">Clases personalizadas</span><span class="en">Personalized classes</span></h3><p><span class="es">Cada estudiante avanza a su ritmo, con profesores con experiencia y un plan por niveles.</span><span class="en">Each student moves at their own pace, with experienced teachers and a level-based plan.</span></p></div>
+      <div class="idea"><h3><span class="es">Inglés como valor agregado</span><span class="en">English as an added value</span></h3><p><span class="es">Usan en clase el inglés que aprenden en el colegio, sin que se sienta como otra materia.</span><span class="en">They use the English they learn at school, without it feeling like another subject.</span></p></div>
+      <div class="idea"><h3><span class="es">Progreso que se ve</span><span class="en">Progress you can see</span></h3><p><span class="es">Muestras cada semestre y el Pasaporte Ágora, donde cada logro queda sellado.</span><span class="en">Showcases every semester and the Ágora Passport, where every milestone gets a stamp.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="programas" style="padding-top:0">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow"><span class="es">Programas</span><span class="en">Programs</span></span>
+      <h2><span class="es">La música es nuestro centro</span><span class="en">Music is at our core</span></h2>
+      <p class="lead"><span class="es">Ofrecemos música y pintura. El primer mes prestamos el instrumento: no tienes que comprar nada para empezar.</span><span class="en">We offer music and painting. We lend the instrument for the first month: no need to buy anything to start.</span></p>
+    </div>
+    <div class="photos">
+      <figure><img src="img/musica.jpg" width="900" height="600" loading="lazy" alt="Niña tocando el piano mientras lee una partitura"><figcaption><span class="es">Música</span><span class="en">Music</span></figcaption></figure>
+      <figure><img src="img/pintura.jpg" width="900" height="600" loading="lazy" alt="Niño pintando con acuarelas"><figcaption><span class="es">Pintura</span><span class="en">Painting</span></figcaption></figure>
+    </div>
+    <div class="prog-grid">
+      <article class="prog">
+        <div class="top"><span class="area" style="background:var(--fonce)"><span class="es">Música</span><span class="en">Music</span></span></div>
+        <h3><span class="es">Iniciación musical</span><span class="en">Early music</span></h3>
+        <p><span class="es">Para los más pequeños: ritmo, canto, xilófonos y percusión. Todo el material lo pone Ágora.</span><span class="en">For the youngest: rhythm, singing, xylophones and percussion. Ágora provides all materials.</span></p>
+        <p class="hook"><b>+ English:</b> <span class="es">canciones y juegos.</span><span class="en">songs and games.</span></p>
+      </article>
+      <article class="prog">
+        <div class="top"><span class="area" style="background:var(--fonce)"><span class="es">Música</span><span class="en">Music</span></span></div>
+        <h3><span class="es">Instrumento</span><span class="en">Instrument</span></h3>
+        <p><span class="es">Piano, guitarra, violín, saxofón y clarinete, con técnica y repertorio a la medida de cada estudiante.</span><span class="en">Piano, guitar, violin, saxophone and clarinet, with technique and repertoire tailored to each student.</span></p>
+        <p class="hook"><b>+ English:</b> <span class="es">vocabulario musical.</span><span class="en">musical vocabulary.</span></p>
+      </article>
+      <article class="prog">
+        <div class="top"><span class="area" style="background:var(--fonce)"><span class="es">Música</span><span class="en">Music</span></span></div>
+        <h3><span class="es">Canto</span><span class="en">Singing</span></h3>
+        <p><span class="es">Técnica vocal, afinación y repertorio para presentarse en público.</span><span class="en">Vocal technique, pitch and repertoire to perform in public.</span></p>
+        <p class="hook"><b>+ English:</b> <span class="es">pronunciación a través del canto.</span><span class="en">pronunciation through singing.</span></p>
+      </article>
+      <article class="prog">
+        <div class="top"><span class="area" style="background:var(--fonce)"><span class="es">Música</span><span class="en">Music</span></span></div>
+        <h3>Ágora Band</h3>
+        <p><span class="es">Ensamble con repertorio pop y rock. Aprenden a tocar en grupo y a subir a un escenario.</span><span class="en">An ensemble with pop and rock repertoire. Students learn to play together and get on stage.</span></p>
+        <p class="hook"><b>+ English:</b> <span class="es">canciones en inglés.</span><span class="en">songs in English.</span></p>
+      </article>
+      <article class="prog">
+        <div class="top"><span class="area" style="background:var(--coral)"><span class="es">Artes plásticas</span><span class="en">Visual arts</span></span></div>
+        <h3><span class="es">Pintura y dibujo</span><span class="en">Painting and drawing</span></h3>
+        <p><span class="es">Técnicas, color y proyectos propios para exponer.</span><span class="en">Techniques, color and personal projects to exhibit.</span></p>
+        <p class="hook"><b>+ English:</b> <span class="es">nombres de técnicas y colores.</span><span class="en">names of techniques and colors.</span></p>
+      </article>
+    </div>
+    <div class="soon">
+      <span class="es">Próximamente:</span><span class="en">Coming soon:</span>
+      <span class="tag"><span class="es">Danza</span><span class="en">Dance</span></span>
+      <span class="tag"><span class="es">Teatro</span><span class="en">Drama</span></span>
+    </div>
+    <div class="camp">
+      <h3>Vacation Camp</h3>
+      <p><span class="es">En temporada de vacaciones abrimos talleres cortos de música y pintura, una buena forma de conocernos. Nuestro foco es la formación continua durante todo el año.</span><span class="en">During school holidays we run short music and painting workshops, a great way to get to know us. Our focus is ongoing training all year round.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="ingles">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow"><span class="es">Valor agregado</span><span class="en">Added value</span></span>
+      <h2><span class="es">El inglés, integrado a la clase</span><span class="en">English, built into the class</span></h2>
+      <p class="lead"><span class="es">La clase es de arte. El inglés aparece en rutinas, vocabulario y canciones, y se ajusta al nivel de cada estudiante para que nadie se frustre.</span><span class="en">The class is about art. English shows up in routines, vocabulary and songs, adjusted to each student's level so nobody gets frustrated.</span></p>
+    </div>
+    <div class="levels">
+      <div class="level" style="background:var(--gallineral)">
+        <span class="step"><span class="es">Nivel 1</span><span class="en">Level 1</span></span>
+        <h3>Seed</h3>
+        <p><span class="es">Saludos, instrucciones sencillas y canciones. La técnica se explica en español.</span><span class="en">Greetings, simple instructions and songs. Technique is explained in Spanish.</span></p>
+      </div>
+      <div class="level" style="background:var(--ocre)">
+        <span class="step"><span class="es">Nivel 2</span><span class="en">Level 2</span></span>
+        <h3>Bloom</h3>
+        <p><span class="es">Vocabulario del arte en inglés y repertorio en inglés.</span><span class="en">Art vocabulary and repertoire in English.</span></p>
+      </div>
+      <div class="level" style="background:var(--coral)">
+        <span class="step"><span class="es">Nivel 3</span><span class="en">Level 3</span></span>
+        <h3>Stage</h3>
+        <p><span class="es">Para quienes ya tienen buen inglés: presentan su obra y participan en montajes en inglés.</span><span class="en">For students with good English: they present their work and take part in shows in English.</span></p>
+      </div>
+    </div>
+    <ul class="rules">
+      <li><span class="k">1</span><div><b>Word of the week</b><p><span class="es">Cada semana compartimos el vocabulario para practicar en casa.</span><span class="en">Every week we share the vocabulary to practice at home.</span></p></div></li>
+      <li><span class="k">2</span><div><b><span class="es">Muestra semestral</span><span class="en">Semester showcase</span></b><p><span class="es">Concierto o exposición donde las familias ven el progreso.</span><span class="en">A concert or exhibition where families see the progress.</span></p></div></li>
+      <li><span class="k">3</span><div><b><span class="es">Reporte para la familia</span><span class="en">Family report</span></b><p><span class="es">Cada trimestre: avance artístico y avance en inglés.</span><span class="en">Every term: arts progress and English progress.</span></p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="pasaporte">
+  <div class="container pass-wrap">
+    <div>
+      <div class="head">
+        <span class="eyebrow"><span class="es">Pasaporte Ágora</span><span class="en">Ágora Passport</span></span>
+        <h2><span class="es">Cada logro, un sello</span><span class="en">Every milestone, a stamp</span></h2>
+        <p class="lead"><span class="es">Cada estudiante recibe su pasaporte con la matrícula. Lo sellamos en clase y en las muestras, y lo puede mostrar en casa.</span><span class="en">Every student gets a passport at enrollment. We stamp it in class and at showcases, and they can show it at home.</span></p>
+      </div>
+      <div class="pass-list">
+        <div><i></i><p><b><span class="es">Retos por nivel.</span><span class="en">Challenges by level.</span></b> <span class="es">Desde la primera presentación en público hasta acompañar a los más pequeños.</span><span class="en">From the first public performance to helping younger students.</span></p></div>
+        <div><i></i><p><b><span class="es">Premios por sellos.</span><span class="en">Rewards.</span></b> <span class="es">Los sellos no se gastan: cada meta trae un premio, desde detalles Ágora hasta ser Anfitrión de Honor en los recitales.</span><span class="en">Stamps are never spent: each goal brings a reward, from Ágora goodies to becoming Honor Host at recitals.</span></p></div>
+        <div><i></i><p><b><span class="es">Beneficios en San Gil.</span><span class="en">Perks around town.</span></b> <span class="es">Comercios aliados ofrecen beneficios a quien muestre su pasaporte vigente.</span><span class="en">Partner businesses offer perks to students with a valid passport.</span></p></div>
+      </div>
+    </div>
+    <div class="passport" aria-label="Ejemplo de página del Pasaporte Ágora">
+      <div class="ph"><span>Pasaporte Ágora</span><span>Bloom</span></div>
+      <div class="stamps">
+        <span class="stamp" style="color:#527D31">STAGE DEBUT</span>
+        <span class="stamp" style="color:#16365C">WORD MASTER</span>
+        <span class="stamp" style="color:#CC452E">SPEAKER</span>
+        <span class="stamp" style="color:#7A5BA6">CREATOR</span>
+        <span class="stamp empty">HOST</span>
+        <span class="stamp empty">MENTOR</span>
+      </div>
+      <div class="ph"><span>San Gil</span><span>4 / 6</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="colegios">
+  <div class="container school">
+    <div class="head" style="margin-bottom:0">
+      <span class="eyebrow"><span class="es">Para colegios</span><span class="en">For schools</span></span>
+      <h2><span class="es">Aliados de los colegios de San Gil</span><span class="en">A partner for San Gil's schools</span></h2>
+      <p class="lead"><span class="es">Trabajamos con colegios, en especial los que tienen énfasis en inglés, para que sus estudiantes sigan creciendo en las artes fuera del aula. Sin costo para el colegio.</span><span class="en">We work with schools, especially English-focused ones, so their students keep growing in the arts outside the classroom. At no cost to the school.</span></p>
+    </div>
+    <div class="offer">
+      <h3><span class="es">Qué ofrece un convenio</span><span class="en">What a partnership includes</span></h3>
+      <ul>
+        <li><span class="es">Condiciones especiales de inscripción para sus estudiantes y sus familias.</span><span class="en">Special enrollment terms for your students and their families.</span></li>
+        <li><span class="es">Charlas para padres sobre los beneficios de las artes en el desarrollo, en las reuniones del colegio.</span><span class="en">Talks for parents on how the arts support child development, at school meetings.</span></li>
+        <li><span class="es">Presentaciones de nuestros estudiantes en eventos y fechas especiales del colegio.</span><span class="en">Performances by our students at school events and celebrations.</span></li>
+        <li><span class="es">Apoyo artístico para celebraciones como el Día del Idioma o el English Day, con repertorio en inglés.</span><span class="en">Artistic support for celebrations like Language Day or English Day, with repertoire in English.</span></li>
+      </ul>
+      <a class="btn btn-ghost js-contact" href="#contacto" style="align-self:flex-start"><span class="es">Hablemos</span><span class="en">Let's talk</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="director">
+  <div class="container director">
+    <img class="portrait" src="img/brayan-parra.jpg" width="640" height="640" alt="Brayan Parra con su clarinete">
+    <div>
+      <span class="eyebrow"><span class="es">Dirección académica</span><span class="en">Academic director</span></span>
+      <h2 style="margin-top:10px">Brayan Parra</h2>
+      <p class="lead" style="margin-top:12px"><span class="es">Director sinfónico, compositor y gestor cultural de San Gil. Clarinetista y pianista, ha dedicado su carrera a la formación musical de niños y jóvenes, al frente de bandas sinfónicas en procesos educativos. Su obra para banda, inspirada en los ritmos colombianos, ha recibido becas de creación del Programa Departamental de Estímulos de Santander. Fundó Ágora para que más niños y jóvenes de la región crezcan a través de las artes.</span><span class="en">Symphonic conductor, composer and cultural manager from San Gil. A clarinetist and pianist, he has devoted his career to the musical training of children and teens, leading symphonic bands in educational programs. His works for band, inspired by Colombian rhythms, have earned creation grants from the Santander Departmental Arts Incentives Program. He founded Ágora so more children and teens in the region can grow through the arts.</span></p>
+      <div class="roles">
+        <span><span class="es">Director sinfónico</span><span class="en">Symphonic conductor</span></span>
+        <span><span class="es">Compositor</span><span class="en">Composer</span></span>
+        <span><span class="es">Clarinetista</span><span class="en">Clarinetist</span></span>
+        <span><span class="es">Pianista</span><span class="en">Pianist</span></span>
+        <span><span class="es">Gestor cultural</span><span class="en">Cultural manager</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contacto">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow"><span class="es">Inscripciones</span><span class="en">Enrollment</span></span>
+      <h2><span class="es">Inscripciones abiertas</span><span class="en">Enrollment is open</span></h2>
+      <p class="lead"><span class="es">Escríbenos para conocer horarios, planes y agendar tu clase de prueba.</span><span class="en">Get in touch to learn about schedules, plans and to book your trial class.</span></p>
+    </div>
+    <div class="info">
+      <div class="card"><h3><span class="es">Horario</span><span class="en">Schedule</span></h3><p><strong><span class="es">Lunes a viernes</span><span class="en">Monday to Friday</span></strong></p><p><span>2:00–7:30 p.m.</span></p><p><strong><span class="es">Sábados</span><span class="en">Saturdays</span></strong></p><p><span>8:00 a.m.–1:00 p.m.</span></p></div>
+      <div class="card"><h3><span class="es">Sede</span><span class="en">Location</span></h3><p><strong><span>San Gil, Santander</span></strong></p><p><span class="es">Centro. Dirección exacta muy pronto.</span><span class="en">Downtown. Exact address coming soon.</span></p></div>
+      <div class="card"><h3><span class="es">Clase de prueba</span><span class="en">Trial class</span></h3><p><span class="es">Gratis, de 30 minutos. La familia puede acompañar.</span><span class="en">Free, 30 minutes. Families are welcome to join.</span></p></div>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><h3><span class="es">Tarifa de lanzamiento</span><span class="en">Launch rate</span></h3><p><span class="es">Condiciones especiales para las familias que se inscriban en la temporada de apertura.</span><span class="en">Special terms for families who enroll during the opening season.</span></p></div>
+      <div class="benefit"><h3><span class="es">Plan hermanos</span><span class="en">Siblings plan</span></h3><p><span class="es">Beneficio en la mensualidad desde el segundo hijo inscrito.</span><span class="en">A monthly fee benefit from the second child enrolled.</span></p></div>
+      <div class="benefit"><h3><span class="es">Colegios aliados</span><span class="en">Partner schools</span></h3><p><span class="es">Condiciones preferenciales para estudiantes de colegios con convenio.</span><span class="en">Preferential terms for students of partner schools.</span></p></div>
+    </div>
+    <div class="contact">
+      <div class="contact-cta">
+        <a class="btn btn-primary" id="wa-btn" href="#" target="_blank" rel="noopener" hidden><span class="es">Escríbenos por WhatsApp</span><span class="en">Message us on WhatsApp</span></a>
+        <a class="btn btn-light" id="mail-btn" href="mailto:contacto@artesagora.com"><span class="es">Escríbenos al correo</span><span class="en">Email us</span></a>
+      </div>
+      <ul class="channels">
+        <li id="tel-line" hidden><span class="es">Teléfono y WhatsApp:</span><span class="en">Phone and WhatsApp:</span> <a id="tel-link" href="#"></a></li>
+        <li><span class="es">Correo:</span><span class="en">Email:</span> <a href="mailto:contacto@artesagora.com">contacto@artesagora.com</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-brand"><svg xmlns="http://www.w3.org/2000/svg" class="brand-full" role="img" aria-label="Ágora, Academia de Artes" viewBox="50 50 1452 714"> <g id="tinta" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="currentColor"><path d="M7005 24739 c-44 -4 -141 -12 -215 -18 -1038 -81 -2122 -461 -2755 -966 -361 -288 -567 -528 -728 -851 -461 -921 21 -1835 968 -1838 279 -1 421 37 613 163 799 527 577 1800 -350 2006 -132 29 -136 56 -25 162 414 393 1159 721 1867 821 2052 291 3654 -675 3911 -2358 38 -255 61 -2686 26 -2790 -18 -52 -48 -51 -165 6 -408 197 -921 360 -1432 453 -1183 215 -2397 212 -3313 -8 -2096 -504 -3237 -1841 -2937 -3441 220 -1171 1273 -2131 2675 -2439 105 -23 219 -49 254 -57 35 -8 113 -19 175 -25 61 -6 140 -15 176 -21 142 -23 779 -22 981 1 613 72 1168 209 1614 398 756 322 1271 656 1747 1135 171 172 203 194 224 151 5 -10 10 -333 11 -718 3 -771 1 -738 43 -760 59 -30 1814 -22 1845 10 30 29 27 -453 29 3775 3 3416 1 3551 -33 3831 -252 2018 -2215 3400 -4811 3388 -173 -1 -351 -5 -395 -10z m1155 -5562 c909 -101 1622 -304 2030 -578 152 -103 135 71 135 -1384 0 -1454 19 -1264 -151 -1465 -1430 -1688 -4195 -1967 -5264 -532 -324 435 -458 858 -467 1472 -19 1315 760 2171 2214 2431 65 11 121 23 124 24 6 4 382 42 479 48 155 11 753 0 900 -16z M18765 24745 c-11 -2 -101 -9 -200 -15 -1161 -73 -2245 -583 -3115 -1466 -1268 -1287 -1828 -3120 -1549 -5069 252 -1760 1247 -3261 2702 -4074 440 -246 1047 -462 1477 -526 58 -9 182 -28 275 -43 409 -64 1160 -28 1655 79 887 191 1789 685 2367 1296 280 297 257 277 288 247 32 -33 16 -2989 -18 -3184 -206 -1187 -1013 -2096 -2233 -2513 -669 -229 -1597 -300 -2274 -173 -41 8 -131 24 -200 36 -364 64 -858 238 -1159 409 -333 188 -503 312 -692 503 -149 151 -152 183 -18 198 754 87 1170 797 888 1515 -278 709 -1260 867 -1827 293 -500 -506 -333 -1487 373 -2193 676 -676 1921 -1176 3150 -1265 77 -6 192 -15 255 -20 147 -12 747 -13 865 0 50 5 164 14 255 19 210 13 367 37 790 122 2161 433 3680 1982 3780 3854 15 281 12 11775 -3 11804 -26 52 -9 55 -946 -179 -486 -121 -896 -227 -912 -235 -55 -29 -54 -14 -59 -650 -3 -324 -9 -596 -13 -602 -15 -24 -46 -13 -79 30 -181 229 -257 314 -420 478 -646 647 -1474 1087 -2333 1239 -66 12 -154 28 -195 36 -151 30 -787 65 -875 49z m1055 -655 c1187 -159 2223 -913 2817 -2048 69 -132 68 -5824 -1 -5956 -480 -918 -1432 -1652 -2411 -1860 -1771 -375 -3275 527 -3969 2378 -410 1092 -529 2591 -310 3901 401 2408 1953 3844 3874 3585z M46645 24744 c-16 -2 -88 -8 -160 -14 -1085 -91 -2090 -792 -2720 -1896 -173 -303 -159 -370 -165 792 -5 956 -5 956 -29 975 -33 27 32 40 -920 -196 -883 -220 -932 -234 -957 -269 -30 -43 -20 -10351 11 -10381 38 -39 1817 -39 1862 -1 28 24 28 24 33 3953 5 3928 5 3928 51 4058 468 1318 1368 2186 2539 2449 504 113 1104 45 1525 -173 292 -151 318 -194 145 -242 -1046 -288 -1081 -1768 -50 -2097 771 -246 1516 310 1465 1093 -65 989 -725 1671 -1835 1895 -195 40 -666 72 -795 54z M54475 24745 c-5 -2 -82 -8 -170 -15 -2306 -169 -3974 -1405 -3750 -2779 123 -754 1087 -1152 1739 -718 793 529 565 1797 -361 2003 -134 30 -135 64 -2 180 797 699 2168 1017 3359 778 1337 -268 2199 -1100 2398 -2314 29 -180 49 -2779 22 -2830 -18 -33 -59 -24 -201 44 -388 186 -894 344 -1389 435 -986 179 -1926 208 -2810 85 -290 -41 -438 -72 -735 -156 -551 -156 -936 -318 -1310 -550 -1097 -683 -1607 -1707 -1400 -2811 254 -1349 1533 -2362 3225 -2553 1545 -175 3331 446 4405 1531 171 173 185 183 209 157 13 -16 15 -103 18 -727 3 -762 2 -746 54 -765 67 -26 1813 -12 1839 15 31 30 40 7180 10 7470 -20 199 -31 277 -54 386 -210 1012 -816 1822 -1806 2409 -391 233 -964 458 -1395 550 -80 17 -164 35 -186 40 -408 95 -869 141 -1389 139 -170 0 -314 -2 -320 -4z m1085 -5568 c915 -102 1612 -300 2027 -578 149 -101 133 70 133 -1384 0 -1419 9 -1271 -81 -1386 -1372 -1741 -4224 -2072 -5325 -618 -586 774 -647 1956 -144 2786 430 708 1248 1100 2500 1197 135 10 746 -2 890 -17z"/></g> <g id="coral" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="#CC452E"><path d="M33150 24473 c-36 -2 -141 -9 -235 -18 -93 -8 -213 -17 -265 -20 -130 -9 -387 -50 -490 -80 -149 -42 -320 -85 -415 -105 -140 -29 -484 -150 -640 -225 -564 -272 -557 -269 -786 -421 -123 -83 -267 -177 -319 -209 -230 -144 -472 -335 -564 -444 -21 -25 -104 -111 -185 -191 -80 -80 -189 -197 -242 -260 -53 -63 -114 -131 -134 -150 -21 -19 -68 -75 -106 -125 -37 -49 -95 -124 -129 -165 -87 -107 -245 -348 -306 -465 -28 -55 -96 -185 -151 -290 -54 -104 -114 -226 -132 -270 -18 -44 -70 -152 -116 -240 -92 -177 -209 -503 -240 -670 -10 -49 -26 -117 -36 -151 -41 -134 -115 -562 -143 -829 -50 -485 -49 -1186 3 -1501 11 -65 30 -182 41 -259 56 -357 172 -753 346 -1175 41 -102 89 -221 105 -265 17 -44 56 -134 88 -200 32 -66 80 -164 106 -218 26 -54 82 -146 124 -205 43 -59 95 -138 116 -175 20 -37 55 -91 77 -120 22 -29 104 -137 182 -242 240 -320 459 -561 632 -691 40 -29 125 -101 190 -159 66 -58 164 -134 220 -169 55 -35 164 -110 240 -168 278 -207 575 -381 784 -458 43 -16 115 -47 160 -70 236 -119 511 -218 865 -312 281 -74 338 -87 445 -102 177 -25 223 -33 389 -61 281 -47 639 -77 856 -70 449 13 582 24 940 80 364 56 629 119 1027 244 51 16 120 37 153 46 122 34 421 175 562 264 224 142 171 153 -153 30 -55 -20 -152 -47 -215 -59 -136 -25 -349 -73 -474 -106 -161 -42 -493 -97 -755 -124 -193 -21 -1076 15 -1264 51 -28 5 -103 19 -166 30 -63 11 -151 29 -195 40 -44 12 -131 29 -192 40 -62 10 -141 30 -175 45 -35 14 -121 41 -193 59 -300 78 -464 135 -735 255 -52 23 -147 62 -210 87 -147 57 -399 187 -515 266 -49 33 -165 109 -258 168 -369 238 -688 512 -1021 879 -72 80 -160 176 -196 213 -35 37 -90 105 -122 150 -146 206 -194 279 -246 367 -30 52 -83 142 -117 200 -34 58 -72 130 -85 160 -12 30 -51 111 -85 180 -34 69 -84 181 -110 250 -27 69 -77 196 -111 282 -120 297 -201 657 -229 1013 -8 105 -22 253 -31 330 -54 466 15 930 130 877 60 -27 72 -92 96 -527 15 -276 41 -447 100 -660 28 -99 66 -250 85 -335 78 -343 198 -661 343 -903 30 -51 70 -125 88 -165 19 -40 49 -96 67 -125 18 -29 62 -101 96 -162 241 -421 530 -769 861 -1038 80 -65 168 -137 196 -160 150 -123 283 -225 402 -306 73 -49 145 -100 159 -111 92 -72 659 -369 876 -458 473 -195 731 -265 1382 -373 66 -11 188 -33 270 -49 83 -16 191 -35 240 -41 128 -18 856 -18 1000 -1 169 20 484 71 540 88 27 8 102 26 165 40 63 14 162 43 220 65 58 21 147 48 198 59 120 26 283 81 592 197 211 80 548 266 800 442 63 44 173 119 244 168 241 163 582 461 754 658 282 324 358 418 420 525 27 47 86 144 132 215 302 474 575 1198 654 1735 8 52 27 169 42 260 31 189 41 536 16 562 -26 26 -71 -74 -113 -251 -11 -46 -36 -133 -55 -193 -19 -60 -34 -113 -34 -118 0 -14 -167 -375 -231 -500 -69 -135 -143 -251 -424 -670 -176 -261 -437 -553 -640 -713 -77 -61 -167 -135 -200 -164 -276 -242 -1045 -658 -1161 -629 -68 17 -30 59 197 216 51 36 131 99 176 142 46 42 120 101 164 131 215 148 515 424 674 623 44 54 116 137 161 184 127 134 195 218 258 320 33 52 83 129 112 170 176 254 450 875 545 1234 22 83 46 174 53 202 92 336 77 1436 -24 1779 -64 218 -86 301 -115 425 -49 211 -193 546 -334 780 -49 80 -99 165 -111 190 -13 25 -61 99 -108 165 -247 349 -236 335 -489 625 -209 241 -253 208 -93 -70 116 -203 159 -285 206 -399 28 -69 63 -152 78 -183 48 -108 91 -283 197 -813 95 -476 131 -1193 75 -1540 -8 -49 -17 -119 -21 -155 -36 -359 -153 -819 -275 -1086 -17 -38 -62 -141 -100 -229 -216 -506 -438 -891 -675 -1170 -28 -33 -82 -98 -120 -145 -185 -227 -469 -515 -648 -655 -275 -216 -251 -199 -512 -352 -305 -178 -551 -293 -852 -397 -37 -13 -100 -35 -139 -50 -92 -33 -507 -116 -584 -116 -32 0 -111 -7 -174 -15 -262 -34 -736 -20 -951 30 -33 7 -109 21 -170 30 -495 73 -871 219 -1418 551 -426 259 -913 727 -1145 1102 -282 455 -358 614 -483 1007 -124 392 -201 1009 -169 1355 45 499 41 472 115 730 29 102 67 237 83 300 29 111 122 379 176 508 23 55 96 177 259 437 122 194 180 275 252 355 43 47 108 126 145 175 93 124 374 406 495 497 55 41 135 105 178 141 94 81 362 240 623 370 160 80 433 186 639 248 338 102 366 108 715 159 288 41 1011 -3 1223 -76 175 -59 415 -79 577 -46 334 68 406 73 675 42 214 -25 245 -31 354 -77 176 -73 243 -24 154 113 -172 266 -259 367 -437 511 -72 59 -165 139 -207 179 -42 39 -109 94 -150 122 -41 28 -109 78 -151 110 -197 152 -541 307 -863 388 -55 14 -143 38 -195 54 -124 38 -337 84 -475 104 -60 9 -153 23 -205 31 -88 14 -425 18 -640 8z"/></g> <g id="sol" transform="scale(0.25) translate(0.000000,3256.000000) scale(0.100000,-0.100000)" fill="#F2B705"><path d="M7810 30079 c-92 -10 -432 -94 -479 -119 -222 -113 -494 -341 -597 -501 -283 -440 -337 -777 -209 -1303 88 -358 308 -652 651 -869 226 -142 820 -228 1079 -156 427 119 628 229 779 429 28 36 78 95 112 132 160 172 303 581 304 871 2 891 -779 1614 -1640 1516z"/></g> <path id="subtitulo" fill="currentColor" d="M265.9325681492109 743.2582496413199H250.0674318507891L247.34146341463415 751.0H240.85365853658536L254.42898134863702 713.054519368723H261.6255380200861L275.2008608321377 751.0H268.6585365853659ZM264.18794835007174 738.1879483500718 258.0272596843615 720.5781922525108 251.81205164992826 738.1879483500718Z M329.48906025824965 712.6183644189383Q335.54071018651365 712.6183644189383 340.2566355810617 715.5896700143471Q344.9725609756098 718.560975609756 347.09881635581064 724.012912482066H339.62966284074605Q338.1576398852224 721.0143472022955 335.54071018651365 719.5423242467718Q332.9237804878049 718.0703012912483 329.48906025824965 718.0703012912483Q325.72722381635583 718.0703012912483 322.7831779053085 719.7604017216643Q319.83913199426115 721.4505021520804 318.1762912482066 724.6126255380201Q316.51345050215207 727.7747489239598 316.51345050215207 731.9727403156385Q316.51345050215207 736.170731707317 318.1762912482066 739.3328550932567Q319.83913199426115 742.4949784791966 322.7831779053085 744.2123385939742Q325.72722381635583 745.9296987087517 329.48906025824965 745.9296987087517Q332.9237804878049 745.9296987087517 335.54071018651365 744.4576757532282Q338.1576398852224 742.9856527977045 339.62966284074605 739.987087517934H347.09881635581064Q344.9725609756098 745.439024390244 340.2566355810617 748.3830703012914Q335.54071018651365 751.3271162123386 329.48906025824965 751.3271162123386Q324.1461621233859 751.3271162123386 319.73009325681494 748.8464849354376Q315.3140243902439 746.3658536585366 312.7243543758967 741.9497847919656Q310.1346843615495 737.5337159253945 310.1346843615495 731.9727403156385Q310.1346843615495 726.4117647058823 312.7243543758967 721.9956958393113Q315.3140243902439 717.5796269727404 319.75735294117646 715.0989956958393Q324.200681492109 712.6183644189383 329.48906025824965 712.6183644189383Z M408.3109756097561 743.2582496413199H392.4458393113343L389.7198708751793 751.0H383.2320659971306L396.8073888091822 713.054519368723H404.0039454806313L417.5792682926829 751.0H411.03694404591107ZM406.5663558106169 738.1879483500718 400.4056671449067 720.5781922525108 394.19045911047345 738.1879483500718Z M487.07837159253944 732.1908177905309Q487.07837159253944 737.9698708751794 484.5977403156385 742.2223816355811Q482.11710903873745 746.4748923959828 477.5647417503587 748.7374461979914Q473.0123744619799 751.0 466.9607245337159 751.0H454.58482783357243V713.1090387374462H466.9607245337159Q473.0123744619799 713.1090387374462 477.5647417503587 715.426111908178Q482.11710903873745 717.7431850789096 484.5977403156385 722.0774748923959Q487.07837159253944 726.4117647058823 487.07837159253944 732.1908177905309ZM480.69960545193686 732.1908177905309Q480.69960545193686 725.5939741750359 477.1558464849354 721.8866571018651Q473.612087517934 718.1793400286944 466.9607245337159 718.1793400286944H460.80003586800575V745.9296987087517H466.9607245337159Q473.612087517934 745.9296987087517 477.1558464849354 742.3314203730272Q480.69960545193686 738.7331420373027 480.69960545193686 732.1908177905309Z M530.5717360114777 718.1248206599713V729.2467718794835H543.6563845050215V734.3170731707318H530.5717360114777V745.9296987087517H545.2919655667145V751.0H524.3565279770445V713.054519368723H545.2919655667145V718.1248206599713Z M623.9503228120516 713.1090387374462V751.0H617.7351147776183V725.0487804878048L606.1770086083213 751.0H601.8699784791964L590.2573529411764 725.0487804878048V751.0H584.0421449067431V713.1090387374462H590.7480272596842L604.0507532281205 742.8220946915352L617.2989598278335 713.1090387374462Z M669.4609038737445 713.1090387374462V751.0H663.2456958393113V713.1090387374462Z M731.5998923959827 743.2582496413199H715.734756097561L713.008787661406 751.0H706.5209827833572L720.0963055954088 713.054519368723H727.2928622668579L740.8681850789096 751.0H734.3258608321377ZM729.8552725968436 738.1879483500718 723.6945839311334 720.5781922525108 717.4793758967 738.1879483500718Z M855.6597919655667 732.1908177905309Q855.6597919655667 737.9698708751794 853.1791606886657 742.2223816355811Q850.6985294117646 746.4748923959828 846.1461621233859 748.7374461979914Q841.5937948350071 751.0 835.5421449067431 751.0H823.1662482065997V713.1090387374462H835.5421449067431Q841.5937948350071 713.1090387374462 846.1461621233859 715.426111908178Q850.6985294117646 717.7431850789096 853.1791606886657 722.0774748923959Q855.6597919655667 726.4117647058823 855.6597919655667 732.1908177905309ZM849.2810258249641 732.1908177905309Q849.2810258249641 725.5939741750359 845.7372668579626 721.8866571018651Q842.1935078909612 718.1793400286944 835.5421449067431 718.1793400286944H829.3814562410329V745.9296987087517H835.5421449067431Q842.1935078909612 745.9296987087517 845.7372668579626 742.3314203730272Q849.2810258249641 738.7331420373027 849.2810258249641 732.1908177905309Z M899.1531563845049 718.1248206599713V729.2467718794835H912.2378048780487V734.3170731707318H899.1531563845049V745.9296987087517H913.8733859397416V751.0H892.9379483500717V713.054519368723H913.8733859397416V718.1248206599713Z M1020.7596843615493 743.2582496413199H1004.8945480631276L1002.1685796269726 751.0H995.6807747489238L1009.2560975609754 713.054519368723H1016.4526542324245L1030.027977044476 751.0H1023.4856527977042ZM1019.0150645624101 738.1879483500718 1012.8543758966999 720.5781922525108 1006.6391678622667 738.1879483500718Z M1086.7150286944045 751.0 1077.9919296987086 735.8436154949785H1073.248744619799V751.0H1067.0335365853657V713.1090387374462H1080.1181850789096Q1084.4797345767574 713.1090387374462 1087.5055595408894 714.635581061693Q1090.5313845050214 716.1621233859397 1092.0306671449066 718.7245337159254Q1093.5299497847918 721.286944045911 1093.5299497847918 724.4490674318508Q1093.5299497847918 728.1563845050215 1091.3764347202296 731.1822094691536Q1089.222919655667 734.2080344332855 1084.752331420373 735.2984218077474L1094.129662840746 751.0ZM1073.248744619799 730.8823529411765H1080.1181850789096Q1083.607424677188 730.8823529411765 1085.3793041606887 729.1377331420373Q1087.1511836441894 727.3931133428981 1087.1511836441894 724.4490674318508Q1087.1511836441894 721.5050215208034 1085.4065638450502 719.8421807747488Q1083.661944045911 718.1793400286944 1080.1181850789096 718.1793400286944H1073.248744619799Z M1157.0864418938306 713.1090387374462V718.1793400286944H1147.0003586800574V751.0H1140.785150645624V718.1793400286944H1130.6445480631278V713.1090387374462Z M1200.6888450502151 718.1248206599713V729.2467718794835H1213.773493543759V734.3170731707318H1200.6888450502151V745.9296987087517H1215.409074605452V751.0H1194.4736370157818V713.054519368723H1215.409074605452V718.1248206599713Z M1253.232424677188 740.532281205165H1259.883787661406Q1260.1018651362983 742.9856527977045 1261.819225251076 744.5667144906743Q1263.5365853658536 746.1477761836442 1266.6441893830702 746.1477761836442Q1269.860832137733 746.1477761836442 1271.6599713055953 744.5939741750358Q1273.4591104734577 743.0401721664275 1273.4591104734577 740.5868005738881Q1273.4591104734577 738.6786226685796 1272.3414634146343 737.4791965566715Q1271.2238163558106 736.2797704447632 1269.560975609756 735.6255380200861Q1267.8981348637014 734.9713055954089 1264.9540889526543 734.2080344332855Q1261.2467718794835 733.2266857962697 1258.9296987087519 732.2180774748924Q1256.61262553802 731.2094691535151 1254.9770444763271 729.0832137733142Q1253.341463414634 726.9569583931134 1253.341463414634 723.4131994261119Q1253.341463414634 720.142037302726 1254.9770444763271 717.6886657101866Q1256.61262553802 715.2352941176471 1259.5566714490674 713.9268292682927Q1262.5007173601148 712.6183644189383 1266.3715925394547 712.6183644189383Q1271.8780487804877 712.6183644189383 1275.3945480631276 715.3715925394548Q1278.9110473457674 718.1248206599713 1279.2926829268292 722.922525107604H1272.4232424677186Q1272.2596843615495 720.8507890961263 1270.4605451936873 719.3787661406026Q1268.6614060258248 717.9067431850789 1265.7173601147776 717.9067431850789Q1263.0459110473457 717.9067431850789 1261.3558106169296 719.2697274031564Q1259.6657101865135 720.6327116212339 1259.6657101865135 723.1951219512196Q1259.6657101865135 724.9397417503587 1260.7288378766139 726.0573888091822Q1261.7919655667145 727.1750358680057 1263.4275466284075 727.8292682926829Q1265.0631276901004 728.4835007173601 1267.8981348637014 729.2467718794835Q1271.6599713055953 730.2826398852224 1274.0315638450502 731.3185078909612Q1276.4031563845049 732.3543758967002 1278.0659971305595 734.5078909612625Q1279.728837876614 736.6614060258249 1279.728837876614 740.2596843615495Q1279.728837876614 743.1492109038737 1278.1750358680056 745.7116212338594Q1276.6212338593973 748.274031563845 1273.6499282639884 749.8278335724533Q1270.6786226685795 751.3816355810617 1266.6441893830702 751.3816355810617Q1262.8278335724533 751.3816355810617 1259.7747489239598 750.0459110473457Q1256.7216642754663 748.7101865136299 1254.9770444763271 746.2568149210904Q1253.232424677188 743.8034433285509 1253.232424677188 740.532281205165Z"/> </svg><span>© <span id="yr">2026</span> Academia de Artes Ágora · San Gil, Santander</span></div>
+    <div class="foot-links"><a href="mailto:contacto@artesagora.com">contacto@artesagora.com</a><span>artesagora.com</span></div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+/* ====== CONFIGURACIÓN: escribe aquí el WhatsApp con 57 adelante, por ejemplo '573001234567' ====== */
+const WHATSAPP = '';
+const EMAIL = 'contacto@artesagora.com';
+(function(){
+  const site=document.getElementById('site'), root=document.documentElement;
+  const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+  // Idioma
+  const esB=document.getElementById('lang-es'), enB=document.getElementById('lang-en');
+  function setLang(l){site.dataset.lang=l;root.lang=l;esB.setAttribute('aria-pressed',l==='es');enB.setAttribute('aria-pressed',l==='en');store.set('agora-lang',l)}
+  esB.onclick=()=>setLang('es'); enB.onclick=()=>setLang('en');
+  const sl=store.get('agora-lang'); if(sl==='en'||sl==='es') setLang(sl);
+  // Modo claro / oscuro
+  const st=store.get('agora-theme'); if(st==='dark'||st==='light') root.dataset.theme=st;
+  document.getElementById('theme-btn').onclick=()=>{
+    const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark'; store.set('agora-theme',root.dataset.theme);
+  };
+  // Contacto
+  const n=(WHATSAPP||'').replace(/\D/g,'');
+  if(n){
+    const msg=encodeURIComponent('Hola, quiero información sobre la Academia de Artes Ágora');
+    const wa='https://wa.me/'+n+'?text='+msg;
+    const b=document.getElementById('wa-btn'); b.href=wa; b.hidden=false;
+    document.querySelectorAll('.js-contact').forEach(a=>{a.href=wa;a.target='_blank';a.rel='noopener'});
+    const local=n.startsWith('57')?n.slice(2):n;
+    const t=document.getElementById('tel-link'); t.href='tel:+'+n; t.textContent=local.replace(/(\d{3})(\d{3})(\d{4})/,'$1 $2 $3');
+    document.getElementById('tel-line').hidden=false;
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // Encuesta de enganche
+  (function(){
+    const qz=document.getElementById('quiz'); if(!qz) return;
+    const items=[...qz.querySelectorAll('.q')], res=document.getElementById('quiz-result');
+    const T={es:[['Las artes pueden despertar algo nuevo','Tu hijo ya tiene buenas bases. Una clase de música o pintura puede ser el espacio donde descubra un talento propio.'],
+                 ['Las artes le pueden aportar mucho','Según tus respuestas, esto es lo que la música y la pintura podrían sumarle:'],
+                 ['Tu hijo tiene todo para crecer con las artes','Según tus respuestas, las artes le pueden dar justo lo que está buscando:']],
+             en:[['The arts can spark something new','Your child already has a good foundation. A music or painting class can be where they discover a talent of their own.'],
+                 ['The arts can give your child a lot','Based on your answers, this is what music and painting could add:'],
+                 ['Your child is ready to grow through the arts','Based on your answers, the arts can give them exactly what they need:']]};
+    function update(){
+      const ans=items.map(li=>{const b=li.querySelector('button[aria-pressed="true"]');return b?b.dataset.v:null});
+      if(ans.some(a=>a===null)){res.hidden=true;return}
+      const yes=items.filter((li,i)=>ans[i]==='1'); const n=yes.length; const lang=document.getElementById('site').dataset.lang||'es';
+      const lvl=n<=1?0:n<=3?1:2;
+      document.getElementById('quiz-title').textContent=T[lang][lvl][0];
+      document.getElementById('quiz-text').textContent=T[lang][lvl][1];
+      const ul=document.getElementById('quiz-benefits'); ul.innerHTML='';
+      (yes.length?yes:[items[2]]).forEach(li=>{const x=document.createElement('li');x.textContent=li.dataset['b'+(lang==='en'?'En':'Es')];ul.appendChild(x)});
+      res.hidden=false;
+    }
+    items.forEach(li=>li.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{li.querySelectorAll('button').forEach(o=>o.setAttribute('aria-pressed',o===b));update()})));
+    document.getElementById('quiz-reset').addEventListener('click',()=>{items.forEach(li=>li.querySelectorAll('button').forEach(o=>o.setAttribute('aria-pressed','false')));res.hidden=true;items[0].querySelector('button').focus()});
+    document.getElementById('lang-es').addEventListener('click',update); document.getElementById('lang-en').addEventListener('click',update);
+  })();
+
+})();
+</script>
+</body>
+</html>

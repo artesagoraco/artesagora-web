@@ -1,0 +1,8 @@
+SITIO ARTESAGORA.COM
+
+Para publicar: arrastra ESTA carpeta completa a app.netlify.com/drop
+
+Para poner el WhatsApp: abre index.html con el Bloc de notas, busca la linea
+  const WHATSAPP = '';
+y escribe el numero con 57 adelante, por ejemplo: const WHATSAPP = '573001234567';
+Guarda y vuelve a subir la carpeta.
